@@ -1,31 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 using ll = long long;
-
+int T;
 int main() {
-    int t; cin >> t;
-    while (t--) {
-        ll x, y; cin >> y >> x;
-        if (y == x) {
-            cout << y*y - y + 1 << endl;
-        }
-        else if (y > x) {
-            if (y&1) {
-                cout << (y-1)*(y-1) + x << endl;
-            }
-            else {
-                cout << y*y - x + 1 << endl;
-            }
-        }
-        else {
-            if (x&1) {
-                cout << x*x - y + 1 << endl;
-            }
-            else {
-                cout << (x-1)*(x-1) + y << endl;
-            }
-        }
-    }
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    
+    scanf("%d", &T);
+    while (T--) {
+        ll x, y; scanf("%lld %lld", &y, &x);
+        ll k = max(x, y);
+        ll base = (k - 1) * (k - 1);
+        ll ans;
 
-    return 0;
+        if (k & 1) 
+            if (y == k) ans = base + x;
+            else        ans = k*k - y + 1;
+        else 
+            if (x == k) ans = base + y;
+            else        ans = k*k - x + 1;
+        cout << ans << '\n';
+    }
 }

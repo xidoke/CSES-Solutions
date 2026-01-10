@@ -2,14 +2,16 @@
 using namespace std;
 using ull = unsigned long long;
 
-int main() {
-    int n; cin >> n;
+int N;
 
-    for (int k = 1; k <= n; k++) {
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    
+    scanf("%d", &N);
+    for (int k = 1; k <= N; k++) {
         ull attacks = 4*(k-1)*(k-2);
         ull total = 1ull*k*k*(k*k-1)/2;
-        cout << total - attacks << endl;
+        printf("%llu\n", total - attacks);
     }
-
-    return 0;
 }

@@ -1,26 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
-using ll = long long;
+int N;
 
 int main() {
-    int n; cin >> n;
-    if (n == 1) {
-        cout << 1 << endl;
-        return 0;
-    }
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
     
-    if (n <= 3) {
-        cout << "NO SOLUTION" << endl;
-        return 0;
-    }
-
-    for (int i = 2; i <= n; i += 2) {
-        cout << i << " ";
-    }
-    for (int i = 1; i <= n; i += 2) {
-        cout << i << " ";
-    }
-    cout << endl;
-
-    return 0;
+    scanf("%d", &N);
+    if (N == 1) return printf("1\n"), 0;
+    if (N <= 3) return printf("NO SOLUTION\n"), 0;
+    for (int i = 2; i <= N; i += 2) printf("%d ", i);
+    for (int i = 1; i <= N; i += 2) printf("%d ", i);
 }
